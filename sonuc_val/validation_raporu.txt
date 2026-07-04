@@ -1,0 +1,8 @@
+DOĞRULAMA (VALIDATION) MÜHENDİSLİK RAPORU
+==================================================
+Metrik          | LSTM Modeli     | BERT Modeli    
+--------------------------------------------------
+Accuracy        | 0.9377          | 0.9462
+Precision       | 0.9266          | 0.9639
+Recall          | 0.9480          | 0.9249
+F1 Score        | 0.9371          | 0.9440

@@ -1,0 +1,17 @@
+# Python önbellek ve derlenmiş dosyalar
+__pycache__/
+*.py[cod]
+
+# Sanal ortam klasörleri
+venv/
+env/
+.venv/
+
+# VS Code ayarları
+.vscode/
+
+# Veri seti iptali
+dataset/
+
+#  ağırlıklar (.pth)  yüklenmez
+sonuc_train/*.pth

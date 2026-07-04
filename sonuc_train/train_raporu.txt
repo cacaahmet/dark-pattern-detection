@@ -1,0 +1,17 @@
+DERİN ÖĞRENME PROJESİ - EĞİTİM AŞAMASI RAPORU
+============================================================
+
+batch_size: 32
+lstm_lr: 0.001
+bert_lr: 2e-05
+lstm_epochs: 10
+bert_epochs: 3
+weight_decay: 0.0001
+
+OVERFITTING ANALİZİ
+----------------------------------------
+=== LSTM MODELİ ===
+Bitiş Train / Val Loss: 0.0177 / 0.2745
+YORUM: Ezberleme (Overfitting) riski.=== BERT MODELİ ===
+Bitiş Train / Val Loss: 0.0279 / 0.1718
+YORUM: Ezberleme (Overfitting) riski.
