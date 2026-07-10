@@ -228,11 +228,7 @@ dark-pattern-detection/
 python train.py
 ```
 
-- `dataset/train.csv` ve `dataset/val.csv` dosyalarını okur.
-- LSTM (5 epoch, `lr=1e-3`, AdamW + ReduceLROnPlateau) ve BERT (3 epoch, `lr=2e-5`, Adam) modellerini sırasıyla eğitir.
-- Her epoch sonunda train/validation loss'unu loglar.
-- Öğrenme eğrilerini `sonuc_train/*.png` olarak, ağırlıkları `sonuc_train/*.pth` olarak kaydeder.
-- Overfitting analizini `sonuc_train/train_raporu.txt` dosyasına yazar.
+Bu çalışmada `dataset/train.csv` ve `dataset/val.csv` veri kümeleri kullanılarak iki farklı derin öğrenme modeli eğitilmiştir. İlk olarak LSTM modeli 5 epoch boyunca `lr=1e-3`, AdamW optimizasyon algoritması ve ReduceLROnPlateau öğrenme oranı planlayıcısı ile eğitilmiştir. Ardından BERT modeli 3 epoch boyunca `lr=2e-5` ve Adam optimizasyon algoritması kullanılarak eğitilmiştir. Her epoch sonunda eğitim ve doğrulama kayıpları kaydedilmiş, öğrenme eğrileri `sonuc_train/*.png` dosyalarına, model ağırlıkları ise `sonuc_train/*.pth` dosyalarına aktarılmıştır. Ayrıca modellerin aşırı öğrenme (overfitting) durumları analiz edilerek sonuçlar `sonuc_train/train_raporu.txt` dosyasına yazdırılmıştır.
 
 ### 2️⃣ Doğrulama (Validation)
 
@@ -240,10 +236,7 @@ python train.py
 python validation.py
 ```
 
-- Eğitilmiş ağırlıkları (`sonuc_train/*.pth`) yükler.
-- `dataset/val.csv` üzerinde Accuracy, Precision, Recall, F1-Score hesaplar.
-- Confusion matrix görsellerini `sonuc_val/` klasörüne kaydeder.
-- Karşılaştırmalı sonuçları `sonuc_val/validation_raporu.txt` dosyasına yazar.
+Bu çalışmada eğitilen modellere ait ağırlıklar `sonuc_train/*.pth` dosyalarından yüklenmiş ve `dataset/val.csv` veri kümesi üzerinde doğrulama işlemleri gerçekleştirilmiştir. Modellerin başarımını değerlendirmek amacıyla Accuracy, Precision, Recall ve F1-Score metrikleri hesaplanmıştır. Ayrıca her iki model için karmaşıklık (confusion) matrisleri oluşturularak görseller `sonuc_val/` klasörüne kaydedilmiş ve karşılaştırmalı performans sonuçları `sonuc_val/validation_raporu.txt` dosyasında raporlanmıştır.
 
 ### 3️⃣ Test
 
@@ -251,11 +244,7 @@ python validation.py
 python test.py
 ```
 
-- Eğitilmiş ağırlıkları yükleyip **hiç görülmemiş** `dataset/test.csv` üzerinde nihai değerlendirmeyi yapar.
-- Accuracy, Precision, Recall, F1-Score, ROC-AUC ve sınıflandırma raporu (`classification_report`) üretir.
-- Confusion matrix ve ROC eğrisi görsellerini `sonuc_test/` klasörüne kaydeder.
-- Sonuçları `sonuc_test/nihai_test_raporu.txt` dosyasına yazar.
-
+Bu çalışmada eğitilmiş model ağırlıkları kullanılarak daha önce görülmemiş `dataset/test.csv` veri kümesi üzerinde nihai test işlemleri gerçekleştirilmiştir. Modellerin performansını değerlendirmek amacıyla Accuracy, Precision, Recall, F1-Score ve ROC-AUC metrikleri hesaplanmış, ayrıca ayrıntılı sınıflandırma raporu (`classification_report`) üretilmiştir. Elde edilen karmaşıklık matrisleri ve ROC eğrileri `sonuc_test/` klasörüne kaydedilmiş, tüm değerlendirme sonuçları ise `sonuc_test/nihai_test_raporu.txt` dosyasında raporlanmıştır.
 ---
 
 ## 📈 Sonuçlar
