@@ -169,25 +169,6 @@ Proje kapsamında özel olarak derlenmiş **"Dark Pattern" veri seti** kullanıl
 
 ---
 
-## ⚙️ Kurulum
-
-```bash
-# 1. Repoyu klonlayın
-git clone https://github.com/cacaahmet/dark-pattern-detection.git
-cd dark-pattern-detection
-
-# 2. Sanal ortam oluşturun (önerilir)
-python -m venv venv
-source venv/bin/activate      # Windows: venv\Scripts\activate
-
-# 3. Bağımlılıkları yükleyin
-pip install torch transformers pandas scikit-learn matplotlib seaborn tqdm
-```
-
-> 💡 GPU (CUDA) mevcutsa betikler otomatik olarak `cuda` cihazını kullanır, aksi halde `cpu` üzerinde çalışır.
-
----
-
 ## 📁 Proje Yapısı
 
 ```
@@ -226,7 +207,7 @@ dark-pattern-detection/
 python train.py
 ```
 Bu çalışmada:
-- `dataset/train.csv` ve `dataset/val.csv` veri setleri kullanılarak model eğitimi gerçekleştirilmiştir.
+- `dataset/train.csv` veri seti kullanılarak model eğitimi gerçekleştirilmiştir.
 - LSTM (5 epoch, `lr=1e-3`, AdamW + ReduceLROnPlateau) ve BERT (3 epoch, `lr=2e-5`, Adam) modelleri sırasıyla eğitilmiştir.
 - Her epoch sonunda train/validation loss değerleri loglanmıştır.
 - Öğrenme eğrileri `sonuc_train/*.png`, model ağırlıkları ise `sonuc_train/*.pth` olarak kaydedilmiştir.
@@ -252,15 +233,13 @@ Bu çalışmada:
 - Confusion matrix ve ROC eğrisi görselleri oluşturularak `sonuc_test/` klasörüne kaydedilmiştir.
 - Elde edilen sonuçlar `sonuc_test/nihai_test_raporu.txt` dosyasına yazılmıştır.
 
-
 ---
-
 ## 📈 Sonuçlar
 
-İlk (vanilla) LSTM mimarisi ~0.69 kayıp seviyesinde tıkanıp underfitting eğilimi gösterirken, **BiLSTM + Global Max Pooling + Dropout + BatchNorm + AdamW** ile yeniden yapılandırılan LSTM ve fine-tune edilen BERT, test setinde aşağıdaki sonuçlara ulaşmıştır:
+İlk LSTM mimarisi ~0.69 kayıp seviyesinde tıkanıp underfitting eğilimi gösterirken, **BiLSTM + Global Max Pooling + Dropout + BatchNorm + AdamW** ile yeniden yapılandırılan LSTM ve fine-tune edilen BERT, test setinde aşağıdaki sonuçlara ulaşmıştır:
 
 | Metrik | LSTM (BiLSTM + Max Pooling) | BERT |
-|---|---|---|
+|---|:---:|:---:|
 | **Accuracy** | %96.05 | Test betiği çalıştırıldığında `sonuc_test/nihai_test_raporu.txt` içinde raporlanır |
 | **Precision** | %95.51 | ” |
 | **Recall** | %96.59 | ” |
@@ -269,6 +248,27 @@ Bu çalışmada:
 
 > BERT modeli eğitim sürecinde çok daha hızlı yakınsamış (train loss: 0.2892 → 0.0058, val loss: 0.2522 → 0.1391) ve genel olarak LSTM'e kıyasla daha üstün bir genelleme performansı sergilemiştir. Kesin BERT test metrikleri, `test.py` çalıştırıldıktan sonra üretilen rapor dosyasında yer alır.
 
+---
+
+### 🔵 LSTM (BiLSTM + Max Pooling) — Test Sonuçları
+
+<div align="center">
+
+| Confusion Matrix | ROC Eğrisi |
+|:---:|:---:|
+| <img src="https://github.com/user-attachments/assets/fa73c002-98f5-4a13-a75c-66c5866ed847" width="420"/> | <img src="https://github.com/user-attachments/assets/bb8e133f-0c7d-4705-bc59-87011148da9e" width="420"/> |
+
+</div>
+
+### 🟣 BERT — Test Sonuçları
+
+<div align="center">
+
+| Confusion Matrix | ROC Eğrisi |
+|:---:|:---:|
+| <img src="https://github.com/user-attachments/assets/7790efb2-af4b-47cd-9144-426aabb4c387" width="420"/> | <img src="https://github.com/user-attachments/assets/0e4d296f-8623-4912-b595-0f762705e567" width="420"/> |
+
+</div>
 ---
 
 ## 🔬 Yöntemsel Detaylar
@@ -301,12 +301,31 @@ Bu tespit sisteminin literatürde ve pratikte işaret ettiği başlıca uygulama
 
 ---
 
+
+## 👤 Geliştirici & İletişim
+
+
+Çalışma hakkında geri bildirimde bulunmak, detaylı bilgi almak, sorularınızı iletmek veya iş birliği yapmak isterseniz benimle aşağıdaki kanallardan iletişime geçebilirsiniz.
+
+<div align="center">
+  
+  <img width="850" alt="Ahmet Çaça İletişim" src="https://github.com/user-attachments/assets/1688e904-a044-4831-aa06-7c22d4b8822c" />
+
+  <br><br>
+
+  <a href="mailto:ahmetcaca.dev@gmail.com">
+    <img src="https://img.shields.io/badge/E_Posta-ahmetcaca.dev@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  
+</div>
+
+---
 ## 📄 Lisans
 
-Bu proje akademik bir lisans dönem projesi kapsamında geliştirilmiştir.
+Bu çalışma akademik bir lisans dönem projesi kapsamında geliştirilmiştir.
 
 ---
 
 <p align="center">
-  Zaman ayırıp projemi incelediğiniz için teşekkür ederim!
+  Zaman ayırıp çalışmamı incelediğiniz için teşekkür ederim!
 </p>
