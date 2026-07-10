@@ -304,36 +304,12 @@ Bu tespit sisteminin literatürde ve pratikte işaret ettiği başlıca uygulama
 
 ---
 
-## 📚 Kaynakça
-
-- Bösch, C., Erb, B., Kargl, F., Kopp, H. ve Pfattheicher, S. (2016). Tales from the dark side: Privacy dark strategies and privacy dark patterns. *Proceedings on Privacy Enhancing Technologies*, 2016(4), 237–254.
-- Brignull, H. (2010). Dark patterns: Deception vs. honesty in UI design. *A List Apart*, 300(11).
-- Devlin, J., Chang, M. W., Lee, K. ve Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. *Proceedings of NAACL-HLT 2019*, 4171–4186.
-- Gray, C. M., Kou, Y., Battles, B., Hoggatt, J. ve Toombs, A. L. (2018). The dark (patterns) side of UX design. *Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems*, 1–14.
-- Hochreiter, S. ve Schmidhuber, J. (1997). Long short-term memory. *Neural Computation*, 9(8), 1735–1780.
-- Luguri, J. ve Strahilevitz, L. J. (2021). Shining a light on dark patterns. *Journal of Legal Analysis*, 13(1), 43–109.
-- Mathur, A., Acar, G., Friedman, M. J., Lucherini, E., Mayer, J., Chetty, M. ve Narayanan, A. (2019). Dark patterns at scale: Findings from a crawl of 11K shopping websites. *Proceedings of the ACM on Human-Computer Interaction*, 3(CSCW), 1–32.
-
----
-
-## 🎓 Danışman ve Yazar
-
-| Rol | İsim |
-|---|---|
-| **Yazar** | Ahmet Çaça (220912021) |
-| **Danışman** | Doç. Dr. İhsan Tuğal |
-| **Kurum** | Muş Alparslan Üniversitesi, Mühendislik-Mimarlık Fakültesi, Yazılım Mühendisliği |
-| **Ders** | Derin Öğrenme Dersi — Lisans Dönem Projesi |
-| **Tarih** | Haziran 2026 |
-
----
-
 ## 📄 Lisans
 
-Bu proje akademik bir lisans dönem projesi kapsamında geliştirilmiştir. Kullanım ve dağıtım koşulları için lütfen repo sahibiyle iletişime geçiniz veya bir `LICENSE` dosyası ekleyiniz.
+Bu proje akademik bir lisans dönem projesi kapsamında geliştirilmiştir.
 
 ---
 
 <p align="center">
-  ⭐ Bu projeyi faydalı bulduysanız repoya yıldız vermeyi unutmayın! ⭐
+  Zaman ayırıp projemi incelediğiniz için teşekkür ederim!
 </p>
